@@ -7,17 +7,17 @@ Compute meander symmetry index (σ) for river bends.
 
 Modes:
 - Visual mode: uses meanderlimits.shp + apex_points.shp (auto-detected from "point data/<year>/")
-- Auto: curvature-based (Finotello et al. 2024, Supplementary Fig. 11). Uses inflection (k=0 crossings) and apex = max |k| between inflections
+- Auto: curvature-based (Finotello et al. 2024, Supplementary Fig. 11). Uses inflexion (k=0 crossings) and apex = max |k| between inflexions
 
 
 Features:
 - Loops over adjacent year pairs and first–last pair (e.g., 2010->2013, 2013->2015, 2010->2015).
 
 - Outputs:
-    <pair>_<mode>.csv         (results)
-    <pair>_<mode>.gpkg        (eroded polygons)
-    <pair>_<mode>_inflections.gpkg (auto mode)
-    <pair>_<mode>_reflection_points.gpkg (if valley_line provided)
+    .csv         (results)
+    .gpkg        (eroded polygons)
+    .png         (plots)
+    reflection_points.gpkg (if valley_line provided)
 
 - Summary across all pairs:
     - meander_symmetry_summary.csv
@@ -264,3 +264,4 @@ def main():
                   valley_line=args.valley_line, outdir=args.outdir, mode=args.mode, plot=args.plot)
 
 if __name__ == "__main__": main()
+
